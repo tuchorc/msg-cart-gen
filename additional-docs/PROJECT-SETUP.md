@@ -166,6 +166,37 @@ npm i @datorama/akita
 npm i ng-google-sheets-db
 ```
 
+# Avoid un-formatted commits
+```shell
+npm i husky
+```
+
+To avoid even committing to a local branch, we have husky in the `package.json` file a husky setting
+```
+"husky": {
+    "hooks": {
+        "pre-commit": "npm run format:check"
+    }
+},
+``` 
+This would install a pre-commit hook that, that before committing to the git repository, executes the `format:check` script.
+
+If Husky is already in your `node_modules` and it's not executing, you may want to reinstall hooks by running `npm rebuild`.
+
+> ## Observation
+> If commit fails with message:  `Info: can't find node in PATH, trying to find a node binary on your system`,
+> you need to set node to your users environment `PATH` variable. See this [issue](https://github.com/typicode/husky/issues/390)
+>
+> 1. Check Node path:
+>     ```
+>     $ which node
+>     /usr/local/bin/node
+>     ```
+> 1. Update your users profile according to your OS `~/.bash_profile`, `~/.profile`, etc:
+>     ```
+>     $ export PATH="/usr/local/bin:$PATH"
+>     ```
+
 # Final steps
 Format the project, install dependencies and start the server
 ```shell
