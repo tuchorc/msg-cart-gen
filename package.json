@@ -7,11 +7,17 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prod": "ng build --aot --extract-css=true --build-optimizer=true --vendor-chunk=true --prod",
+    "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "format:write": "prettier --config ./.prettierrc --write \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/<app-name>/stats.json",
+    "compodoc": "npx compodoc --config .compodocrc"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.4",
+    "@angular/cdk": "^11.1.0",
     "@angular/common": "~11.0.4",
     "@angular/compiler": "~11.0.4",
     "@angular/core": "~11.0.4",
@@ -19,6 +25,11 @@
     "@angular/platform-browser": "~11.0.4",
     "@angular/platform-browser-dynamic": "~11.0.4",
     "@angular/router": "~11.0.4",
+    "@datorama/akita": "^6.0.0",
+    "ng-google-sheets-db": "^1.1.0",
+    "primeflex": "^2.0.0",
+    "primeicons": "^4.1.0",
+    "primeng": "^11.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -37,9 +48,12 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "prettier": "^2.2.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~4.0.2",
+    "webpack-bundle-analyzer": "^4.4.0"
   }
 }

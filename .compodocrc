@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/@compodoc/compodoc/src/config/schema.json",
+  "name": "Shopping Message Cart Generator Documentation",
+  "output": "./docs/",
+  "tsconfig": "./tsconfig.json",
+  "assetsFolder": "./docs-assets",
+  "customFavicon": "./docs-assets/favicon.ico",
+  "customLogo": "./docs-assets/logo.png",
+  "theme": "gitbook",
+  "disableSourceCode": false,
+  "disableLifeCycleHooks": false,
+  "disablePrivate": false,
+  "disableProtected": false,
+  "disableInternal": false,
+  "disableDomTree": true,
+  "disableTemplateTab": false,
+  "disableStyleTab": false,
+  "disableCoverage": false,
+  "hideGenerator": false,
+  "disableGraph": false,
+  "disableRoutesGraph": false,
+  "minimal": false,
+  "navTabConfig": [
+    {
+      "id": "readme",
+      "label": "Review"
+    },
+    {
+      "id": "example",
+      "label": "Example"
+    },
+    {
+      "id": "info",
+      "label": "Build Info"
+    },
+    {
+      "id": "source",
+      "label": "Source Code"
+    },
+    {
+      "id": "templateData",
+      "label": "Template Data"
+    }
+  ],
+  "includes": "./additional-docs"
+}
